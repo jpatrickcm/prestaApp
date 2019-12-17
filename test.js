@@ -163,3 +163,43 @@ function ObtenerFechaSinHoras(fecha) {
     fecha = new Date(fecha);
     return new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate());
 }
+
+
+/**
+ *  
+
+ Hola chicos, esto es casi a detalle el consolidado de nuestros temas.Deseando terminar con bien este año,así mismo empezar uno nuevo, de retos y logros mutuos. Gracias.👼🏻🎄🤶🏻🎅🏻
+ 
+  "APOYOMUTUO  I"
+K : $ 3 000.00
+I  : 12%
+T : 30 días.
+Del 12 de setiembre 2019 al 11 de octubre 2019
+MONTO TOTAL : $ 3 360.00 de los cuales AMORTIZA (02/11/19) 
+DEVOLUCION FUERA DE FECHA : $ 2 380.00 (A los 52 días)
+IMPORTE S/. 8 000. 00 equivalente a $ 2380.00 TC : S/. 3.36 al 02 de noviembre 2019 quedando..
+SALDO
+Nuevo K: $1 244. 00
+I : 12 %
+T: 30 días
+Del 02 de noviembre 2019al 1de diciembre 2019.
+DEVOLUCION PENDIENTE FUERA DE FECHA(A los 31 dias,hoy 02/12/19)
+Nota: interés diario $ 5.00
+IMPORTE : K: $ 1244.00
+                      I: $   155.00
+TOTAL U : $ 1399.00
+
+        APOYOMUTUO II
+K : $ 3 000. 00
+ I :  0.05%
+TIEMPO : 8 días.
+Del 27 de noviembre 2019 al
+03 de diciembre 2019
+Nota: interés diario $ 20.00
+DEVOLUCION PENDIENTE
+IMPORTE K : $ 3 000.00
+                    I : $    150.00
+TOTAL  D $ 3 150.00
+ 
+
+ */
