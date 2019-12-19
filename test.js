@@ -48,6 +48,7 @@ if (prestamo.amortizacion != "") {
 console.log("\n" + "           NUEVO CONTRATO  " + "\n");
 
 console.log(prestamo);
+// MostrarEnUnaLineaDatosPrestamo(prestamo);
 
 
 /**
@@ -96,6 +97,7 @@ if (prestamo.amortizacion != "") {
     prestamo.pendienteAmortizar = (prestamo.montoFinalInteres + prestamo.monto);
 }
 console.log(prestamo);
+// MostrarEnUnaLineaDatosPrestamo(prestamo);
 
 
 
@@ -135,7 +137,7 @@ if (prestamo.amortizacion != "") {
     prestamo.pendienteAmortizar = (prestamo.montoFinalInteres + prestamo.monto);
 }
 console.log(prestamo);
-
+// MostrarEnUnaLineaDatosPrestamo(prestamo);
 
 
 
@@ -164,6 +166,50 @@ function ObtenerFechaSinHoras(fecha) {
     return new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate());
 }
 
+function MostrarEnUnaLineaDatosPrestamo(prestamo) {
+    console.log(
+        "id" + "|" +
+        "prestamoOrigen" + "|" +
+        "monto" + "|" +
+        "tipoMoneda" + "|" +
+        "porcentajeInteres" + "|" +
+        "tiempo" + "|" +
+        "tiempoUnidad" + "|" +
+        "fechaInicio" + "|" +
+        "fechaFin" + "|" +
+        "tiempoTranscurrido" + "|" +
+        "tiempoTranscurridoUnidad" + "|" +
+        "montoFinalInteres" + "|" +
+        "prestamista" + "|" +
+        "beneficiario" + "|" +
+        "amortizacion" + "|" +
+        "pendienteAmortizar" + "|" +
+        "flag_finalizado" + "|" +
+        "flag_diasTrancurridos" + "|" +
+        "estado"
+    );
+    console.log(
+        prestamo.id + "|" +
+        prestamo.prestamoOrigen + "|" +
+        prestamo.monto + "|" +
+        prestamo.tipoMoneda + "|" +
+        prestamo.porcentajeInteres + "|" +
+        prestamo.tiempo + "|" +
+        prestamo.tiempoUnidad + "|" +
+        prestamo.fechaInicio + "|" +
+        prestamo.fechaFin + "|" +
+        prestamo.tiempoTranscurrido + "|" +
+        prestamo.tiempoTranscurridoUnidad + "|" +
+        prestamo.montoFinalInteres + "|" +
+        prestamo.prestamista + "|" +
+        prestamo.beneficiario + "|" +
+        prestamo.amortizacion + "|" +
+        prestamo.pendienteAmortizar + "|" +
+        prestamo.flag_finalizado + "|" +
+        prestamo.flag_diasTrancurridos + "|" +
+        prestamo.estado
+    );
+}
 
 /**
  *  
