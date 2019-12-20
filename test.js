@@ -46,7 +46,7 @@ if (prestamo.amortizacion != "") {
 }
 
 console.log("\n" + "           NUEVO CONTRATO  " + "\n");
-
+prestamo.estado = "TERMINADO";
 console.log(prestamo);
 // MostrarEnUnaLineaDatosPrestamo(prestamo);
 
@@ -55,7 +55,6 @@ console.log(prestamo);
  * Si el pendiente a amortizar es mayor a 0, se da por finalizado el contrato/acuerdo anterior.
  */
 
-prestamo.estado = "TERMINADO";
 console.log("                               TERMINADO ----> : " + prestamo.id +
     "\n" + "           NUEVO CONTRATO  " + "\n");
 
@@ -86,6 +85,15 @@ prestamo = {
     estado: "REGISTRADO"
 };
 
+// abono de 3k soles 30 nov - tc 3.39  => $ 884.95
+
+prestamo.amortizacion = 884.95;
+prestamo.fechaFin = "30-Nov-2019";
+prestamo.tiempoTranscurrido = 28;
+prestamo.estado = "ABONADO";
+
+
+
 if (prestamo.fechaFin == undefined) {
     prestamo.tiempoTranscurrido = CalcularTiempoTranscurrido(prestamo.fechaInicio, new Date());
 }
@@ -96,10 +104,50 @@ if (prestamo.amortizacion != "") {
 } else {
     prestamo.pendienteAmortizar = (prestamo.montoFinalInteres + prestamo.monto);
 }
+prestamo.estado = "TERMINADO";
 console.log(prestamo);
 // MostrarEnUnaLineaDatosPrestamo(prestamo);
 
 
+
+console.log("                               TERMINADO ----> : " + prestamo.id +
+    "\n" + "           NUEVO CONTRATO  " + "\n");
+
+prestamo = {
+    id: "ApoyoMutuoI-003",
+    prestamoOrigen: "ApoyoMutuoI-002",
+    monto: 497.32,
+    tipoMoneda: "USD",
+    porcentajeInteres: 0.12,
+    tiempo: 30,
+    tiempoUnidad: "dia",
+    fechaInicio: "30-Nov-2019",
+    fechaFin: null,
+    tiempoTranscurrido: 0,
+    tiempoTranscurridoUnidad: "dia",
+    montoFinalInteres: 0.00,
+    prestamista: "Mariliz(Mama)",
+    beneficiario: "Jorge(Papa)",
+    amortizacion: 0.00,
+    pendienteAmortizar: 0.00,
+    flag_finalizado: false,
+    flag_diasTrancurridos: false,
+    estado: "REGISTRADO"
+};
+
+if (prestamo.fechaFin == undefined) {
+    prestamo.tiempoTranscurrido = CalcularTiempoTranscurrido(prestamo.fechaInicio, new Date());
+}
+prestamo.montoFinalInteres = CalculoMontoInteresTranscurrido(prestamo);
+
+if (prestamo.amortizacion != "") {
+    prestamo.pendienteAmortizar = ((prestamo.montoFinalInteres + prestamo.monto) - prestamo.amortizacion);
+} else {
+    prestamo.pendienteAmortizar = (prestamo.montoFinalInteres + prestamo.monto);
+}
+
+console.log(prestamo);
+// MostrarEnUnaLineaDatosPrestamo(prestamo);
 
 console.log("\n" + "           NUEVO CONTRATO  " + "\n");
 
