@@ -135,6 +135,15 @@ prestamo = {
     estado: "REGISTRADO"
 };
 
+
+// abono de $ 479.51
+
+prestamo.amortizacion = 479.51;
+prestamo.fechaFin = "19-Dec-2019";
+prestamo.tiempoTranscurrido = 19;
+prestamo.estado = "ABONADO";
+
+
 if (prestamo.fechaFin == undefined) {
     prestamo.tiempoTranscurrido = CalcularTiempoTranscurrido(prestamo.fechaInicio, new Date());
 }
@@ -146,6 +155,48 @@ if (prestamo.amortizacion != "") {
     prestamo.pendienteAmortizar = (prestamo.montoFinalInteres + prestamo.monto);
 }
 
+prestamo.estado = "TERMINADO";
+console.log(prestamo);
+// MostrarEnUnaLineaDatosPrestamo(prestamo);
+
+
+
+console.log("                               TERMINADO ----> : " + prestamo.id +
+    "\n" + "           NUEVO CONTRATO  " + "\n");
+
+prestamo = {
+    id: "ApoyoMutuoI-004",
+    prestamoOrigen: "ApoyoMutuoI-003",
+    monto: 55.6063,
+    tipoMoneda: "USD",
+    porcentajeInteres: 0.12,
+    tiempo: 30,
+    tiempoUnidad: "dia",
+    fechaInicio: "19-Dec-2019",
+    fechaFin: null,
+    tiempoTranscurrido: 0,
+    tiempoTranscurridoUnidad: "dia",
+    montoFinalInteres: 0.00,
+    prestamista: "Mariliz(Mama)",
+    beneficiario: "Jorge(Papa)",
+    amortizacion: 0.00,
+    pendienteAmortizar: 0.00,
+    flag_finalizado: false,
+    flag_diasTrancurridos: false,
+    estado: "REGISTRADO"
+};
+
+
+if (prestamo.fechaFin == undefined) {
+    prestamo.tiempoTranscurrido = CalcularTiempoTranscurrido(prestamo.fechaInicio, new Date());
+}
+prestamo.montoFinalInteres = CalculoMontoInteresTranscurrido(prestamo);
+
+if (prestamo.amortizacion != "") {
+    prestamo.pendienteAmortizar = ((prestamo.montoFinalInteres + prestamo.monto) - prestamo.amortizacion);
+} else {
+    prestamo.pendienteAmortizar = (prestamo.montoFinalInteres + prestamo.monto);
+}
 console.log(prestamo);
 // MostrarEnUnaLineaDatosPrestamo(prestamo);
 
@@ -156,8 +207,8 @@ prestamo = {
     prestamoOrigen: "ApoyoMutuoI-001",
     monto: 3000.00,
     tipoMoneda: "USD",
-    porcentajeInteres: 0.05,
-    tiempo: 8,
+    porcentajeInteres: 0.12,
+    tiempo: 30,
     tiempoUnidad: "dia",
     fechaInicio: "27-Nov-2019",
     fechaFin: null,
